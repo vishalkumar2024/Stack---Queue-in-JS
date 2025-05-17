@@ -65,15 +65,15 @@ stk.push(20)
 stk.push(30)
 stk.push(40)
 
-// stk.pop();
+stk.pop();
 
 // console.log(stk)
 // console.log(stk.atTop())
 // console.log(stk.isEmpty())
 // console.log(stk.size())
 
-while(stk.size()!==0){
+while (stk.size() !== 0) {
     console.log(stk.atTop());
     stk.pop();
 }
-//  output: 40, 30, 20, 10
+//  output: 30, 20, 10
