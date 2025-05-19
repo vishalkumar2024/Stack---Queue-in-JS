@@ -28,7 +28,7 @@ class Stack {
         return this.top = this.top.next;
     }
 
-    size() {
+    size() { 
         return this.count;
     }
 
