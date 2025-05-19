@@ -25,19 +25,21 @@ class Stack {
             return "Stack Underflow";
         }
         this.count--
-        return this.top = this.top.next;
+        const poppedValue = this.top.data;
+        this.top = this.top.next;
+        return poppedValue;
     }
 
-    size() { 
+    size() {
         return this.count;
     }
 
     atTop() {
-        return this.top.data
+        return this.isEmpty() ? null : this.top.data;
     }
 
     isEmpty() {
-        return (!this.top) 
+        return (!this.top)
     }
 }
 
@@ -54,7 +56,9 @@ stk.push(40)
 // console.log(stk.atTop())
 // console.log(stk.isEmpty())
 
-while(!stk.isEmpty()){
+while (!stk.isEmpty()) {
     console.log(stk.atTop())
     stk.pop();
 }
+
+ 
