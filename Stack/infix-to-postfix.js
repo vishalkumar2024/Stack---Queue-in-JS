@@ -2,6 +2,8 @@ class Solution {
     infixToPostfix(s) {
         let stk = [];
         let ans = [];
+        
+        //function to determine the priority of characters
         function priority(val) {
             if (val == "^") return 3
             else if (val == "*" || val == "/") return 2;
