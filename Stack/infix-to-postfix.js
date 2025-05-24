@@ -1,8 +1,8 @@
 class Solution {
     infixToPostfix(s) {
         let stk = [];
-        let ans = [];
-        
+        let ans = "";
+
         //function to determine the priority of characters
         function priority(val) {
             if (val == "^") return 3
@@ -20,34 +20,27 @@ class Solution {
         let i = 0;
         while (i < s.length) {
             if ((s[i] >= "A" && s[i] <= "Z") || (s[i] >= "a" && s[i] <= "z") || (s[i] >= "A" && s[i] <= "Z")) {
-                ans.push(s[i]);
+                ans += s[i];
             } else if (s[i] == "(") {
                 stk.push(s[i]);
-                console.log("object")
             } else if (s[i] == ")") {
                 while (stk[stk.length - 1] !== "(") {
-                    ans.push(stk.pop());
+                    ans += stk.pop();
                 }
                 stk.pop()
             }
             else {
-                if (stk.length == 0) {
-                    stk.push(s[i]);
-                } else {
-                    if (priority(s[i]) > priority(stk[stk.length - 1])) {
-                        stk.push(s[i]);
-                    } else {
-
-                        ans.push(stk.pop());
-                        stk.push(s[i]);
-                    }
+                while(stk.length!==0 && priority(s[i])<=priority(stk[stk.length-1])){
+                    ans+=stk[stk.length-1];
+                    stk.pop();
                 }
+                stk.push(s[i])
             }
             i++;
 
         }
         while (stk.length > 0) {
-            ans.push(stk.pop());
+            ans += stk.pop();
         }
         return ans;
     }
@@ -55,6 +48,6 @@ class Solution {
 
 let obj = new Solution();
 
-let s = "a+b*(c^d-e)^(f+g*h)-i"
+let s = "h^m^q^(7-4)"
 console.log(obj.infixToPostfix(s));
 
