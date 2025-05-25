@@ -64,8 +64,6 @@ class Solution {
                 }
                 stk.push(s[i]);
             }
-            console.log(ans)
-            console.log(stk)
             i++;
         }
         while (stk.length > 0) {
@@ -81,3 +79,5 @@ let obj = new Solution();
 let s = "(a+b)*c-d+f" // output: "+ - * + a b c d f"
 console.log(obj.infixToPostfix(s));
 
+// TC=O(3n)
+// SC=O(n)
