@@ -48,6 +48,6 @@ class Solution {
 
 let obj = new Solution();
 
-let s = "h^m^q^(7-4)"
+let s = "f+d-c*(b+a)"
 console.log(obj.infixToPostfix(s));
 
