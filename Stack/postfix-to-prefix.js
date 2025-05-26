@@ -16,7 +16,7 @@ class Solution {
             }
             i++;
         }
-        return stk[stk.length-1]
+        return stk[stk.length-1];
     }
 }
 
