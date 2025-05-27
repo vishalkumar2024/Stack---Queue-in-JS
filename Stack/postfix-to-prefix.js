@@ -6,9 +6,9 @@ class Solution {
             if ((s[i] >= "A" && s[i] <= "Z") || (s[i] >= "a" && s[i] <= "z") || (s[i] >= "A" && s[i] <= "Z")) {
                 stk.push(s[i]);
             } else {
-                let t1 = stk[stk.length - 1] //Top ele of stack
+                let t1 = stk[stk.length - 1] //Top element of stack
                 stk.pop()
-                let t2 = stk[stk.length - 1];  // Top ele of stack after poping Top ele
+                let t2 = stk[stk.length - 1];  // Top element of stack after poping Top element
                 stk.pop();
 
                 let mod=s[i]+t2+t1;
