@@ -1,7 +1,8 @@
+// Leetcode 496
 function nextGreaterElement(nums1, nums2) {
     let res = [];   //SC=O(n)
-    for (let i = 0; i < nums2.length; i++) {  //TC=O(n2)
-        for (let j = 0; j < nums1.length; j++) {   //TC=O(n1)
+    for (let i = 0; i < nums1.length; i++) {  //TC=O(n2)
+        for (let j = 0; j < nums2.length; j++) {   //TC=O(n1)
             if (nums1[i] == nums2[j]) {
                 for (let k = j; k < nums2.length; k++) {  //TC=O(n2)
                     if (nums2[k] > nums1[i]) {
@@ -9,7 +10,8 @@ function nextGreaterElement(nums1, nums2) {
                         break;
                     }
                 }
-                res.push(-1)
+                if ((i + 1) !== res.length) res.push(-1)
+                break;
             }
         }
     }
@@ -17,7 +19,7 @@ function nextGreaterElement(nums1, nums2) {
 };
 
 let nums1 = [4, 1, 2];
-let nums2 = [1, 3, 4, 2];  //[-1,3,-1]
+let nums2 = [1, 2, 3, 4];  //[-1,2,3]
 
 console.log(nextGreaterElement(nums1, nums2));
 
