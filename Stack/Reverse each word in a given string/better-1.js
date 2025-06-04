@@ -34,5 +34,5 @@ function reverseWords(s) {
 let s = " I like this program";
 console.log(reverseWords(s));
 
-// TC=O(n+k)
+// TC=O(n*k)
 // SC=O(n+k)
