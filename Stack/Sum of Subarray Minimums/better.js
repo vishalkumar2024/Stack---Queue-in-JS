@@ -6,15 +6,15 @@ function sumSubarrayMins(arr) {
         let min = arr[i];
         for (let j = i; j < arr.length; j++) {  //TC=O(n)
             min = Math.min(min, arr[j])
-            sum += min;
+            sum += min
         }
     }
     return sum;
 };
 
-let arr = [3, 1, 2, 2];
+let arr = [3,1,2,4];
 console.log(sumSubarrayMins(arr));
 
 
 // TC=O(n*n)
-// SC=O(n)
+// SC=O(1)
