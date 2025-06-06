@@ -28,7 +28,7 @@ function sumSubarrayMins(arr) {
     elem.push(arr[arr.length - 1])
     res.push(elem)
 
-    // finding the lowest number of each subarrays and add them
+    // find the lowest number of each subarrays and add them
     let ans = 0
     for (let i = 0; i < res.length; i++) {  //TC=O(n(n+1)/2)
         ans += lowest(res[i])
