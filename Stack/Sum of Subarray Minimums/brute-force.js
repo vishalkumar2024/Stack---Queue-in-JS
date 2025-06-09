@@ -15,7 +15,7 @@ function sumSubarrayMins(arr) {
 
     // Finding all Subarrays 
     let res = []
-    for (let k = 0; k < arr.length - 1; k++) {  //TC=O(n)
+    for (let k = 0; k < arr.length ; k++) {  //TC=O(n)
         for (let i = arr.length - 1; i >= k; i--) {  //TC=O(n)
             let elem = [];
             for (let j = i; j >= k; j--) {  //TC=O(n)
@@ -24,19 +24,15 @@ function sumSubarrayMins(arr) {
             res.push(elem)
         }
     }
-    let elem = []
-    elem.push(arr[arr.length - 1])
-    res.push(elem)
-
     // find the lowest number of each subarrays and add them
     let ans = 0
     for (let i = 0; i < res.length; i++) {  //TC=O(n(n+1)/2)
         ans += lowest(res[i])
     }
-    return ans
+    return ans;
 };
 
-let arr = [3, 1, 2, 4];
+let arr = [3,1,2,4];
 console.log(sumSubarrayMins(arr));
 
 
