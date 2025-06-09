@@ -4,11 +4,11 @@ function subArrayRanges(arr) {
 
     let sum = 0
     for (let i = 0; i < arr.length; i++) {  // TC=O(n)
-        let max = nums[i];
-        let min = nums[i];
+        let max = arr[i];
+        let min = arr[i];
         for (let j = i; j < arr.length; j++) {  // TC=O(n)
-            max = Math.max(max, nums[j]);
-            min = Math.min(min, nums[j]);
+            max = Math.max(max, arr[j]);
+            min = Math.min(min, arr[j]);
             sum += (max - min);
         }
     };
