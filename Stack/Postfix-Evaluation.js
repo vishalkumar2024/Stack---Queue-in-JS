@@ -3,36 +3,37 @@
 // integer representing its value.
 
 function evaluate(arr) {
-    let i = 0;
     let stk = [];
-    while (i < arr.length) {
-        if ((arr[i] >= "0" && arr[i] <= "9")) {
-            stk.push(arr[i])
+
+    for (let i = 0; i < arr.length; i++) {
+
+        // If element is a number, push it onto the stk
+        if (!isNaN(arr[i])) {
+            stk.push(Number(arr[i]));
         } else {
-            let t1 = stk.pop();
-            let t2 = stk.pop();
+            let val1 = stk.pop();
+            let val2 = stk.pop();
 
-            if (arr[i] == "+") {
-                calc = Number(t2) + Number(t1)
+            switch (arr[i]) {
+                case "+":
+                    stk.push(val2 + val1);
+                    break;
+                case "-":
+                    stk.push(val2 - val1);
+                    break;
+                case "*":
+                    stk.push(val2 * val1);
+                    break;
+                case "/":
+                    stk.push(Math.trunc(val2 / val1));
+                    break;
             }
-            else if (arr[i] == "-") {
-                calc = Number(t2) - Number(t1)
-            }
-            else if (arr[i] == "*") {
-                calc = Number(t2) * Number(t1)
-            }
-            else if (arr[i] == "/") {
-                calc = Number(t2) / Number(t1)
-            }
-
-            stk.push(calc);
         }
-        i++;
     }
-    return stk[stk.length - 1];
+    return stk.pop();
 
 }
-let arr =  ["100", "200", "+", "2", "/", "5", "*", "7", "+"]
+let arr = ["100", "200", "+", "2", "/", "5", "*", "7", "+"]
 console.log(evaluate(arr));
 
 // Tc=O(n)
