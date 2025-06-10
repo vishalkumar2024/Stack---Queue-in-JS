@@ -45,7 +45,11 @@ class Stack {
         }
     }
     pop() {
-        this.que.pop();
+        if (this.que.length == 0) {
+            return -1
+        } else {
+            return this.que.pop();
+        }
     }
     atTop() {
         return this.que.atTop()
@@ -60,12 +64,11 @@ class Stack {
 
 let stk = new Stack();
 
-stk.push(10)
-stk.push(20)
-stk.push(30)
-stk.push(40)
-
-stk.pop();
+stk.push(2)
+stk.push(3)
+stk.pop()
+stk.push(4)
+stk.pop()
 
 // console.log(stk)
 // console.log(stk.atTop())
