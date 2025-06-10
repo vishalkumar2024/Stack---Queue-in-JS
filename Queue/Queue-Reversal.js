@@ -3,8 +3,8 @@
 
 function reversedQueue(q) {
     let res = [];
-    for (let i = q.length - 1; i >= 0; i--) {
-        res[i] = q.shift();
+    while (q.length !== 0) {
+        res.unshift(q.shift());
     }
     return res;
 }
